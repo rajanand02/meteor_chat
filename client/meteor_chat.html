@@ -8,15 +8,12 @@
     </div>
   </div>
   <div class="container">
-    <div class="row">
-      {{> rooms}}
-      {{renderPage}}
-      <template name = "home">
-        <div class="span6">
+        <div class="span6 offset3">
           <h1>Welcome to Metero Chat</h1>
-          <p>Please select a chat room or make a new one</p>
+          <p class = "msg">Please select a chat room or make a new one</p>
         </div>
-      </template>
+    <div class="row content">
+      {{> rooms}}
     </div>
   </div>
 </body>
