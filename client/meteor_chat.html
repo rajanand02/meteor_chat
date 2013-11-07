@@ -1,0 +1,79 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Metero Chat</title>
+</head>
+<body>
+  <div class="navbar navbar">
+    <div class="navbar-inner">
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      {{> rooms}}
+      {{renderPage}}
+      <template name = "home">
+        <div class="span6">
+          <h1>Welcome to Metero Chat</h1>
+          <p>Please select a chat room or make a new one</p>
+        </div>
+      </template>
+    </div>
+  </div>
+</body>
+<template name = "rooms">
+  <form name = "new_row">
+    <table id="rooms" class = "table table-striped table-hover span6">
+      <thead>
+        <tr>
+          <th>Room Name</th>
+          <th>Members online</th>
+          <th>Last activity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each rooms}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{members}}</td>
+          <td>{{last_activity}}</td>
+        </tr>
+        {{/each}}
+        <tr>
+          <td colspan = "3">
+            <input type="text" name="name" placeholder = "Enter your chatroom name"></input>
+            <button type="submit" class = "btn btn-primary pull-right">
+              <i class = "icon-plus"></i>Create Room
+            </button>
+          </td> 
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</template>
+<template name="room">
+  <div class="span6">
+    {{#with room}}
+    <h1>Welcome to {{name}}</h1></p>
+  <table id="chat" class="table table-striped">
+    <tbody>
+      {{#each messages}}
+      <tr>
+        <td>{{author}} :</td>
+        <td>{{text}}</td>
+      </tr>
+      {{/each}}
+      <tr>
+        <td colspan="2">
+          <form name="new_message">
+            <input type="text" name="text"></input>
+            <button type="submit" class="btn btn-primary pull-right">
+              <i class="icon-envelope"></i> Send message
+            </button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  {{/with}}
+</div>
+</template>
