@@ -11,3 +11,5 @@ bootstrap-themes
 less
 font-awesome
 router
+accounts-ui
+accounts-github

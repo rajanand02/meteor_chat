@@ -6,3 +6,26 @@
   text-align: center;
   margin: 20px 0px 40px;
 }
+
+.login{
+  float: right;
+  padding: 13px 20px;
+  font-size: 18px;
+}
+#login-buttons a, .accounts-dialog a{
+
+  color: white;
+}
+#login-buttons.login-buttons-dropdown-align-right .login-close-text {
+  color: #18BC9C;
+}
+
+#login-buttons #signup-link {
+  color: #18BC9C;
+}
+#login-buttons #forgot-password-link {
+  color: #18BC9C;
+}
+#login-buttons #back-to-login-link{
+  color: #18BC9C;
+}

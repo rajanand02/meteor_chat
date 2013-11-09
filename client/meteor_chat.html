@@ -5,6 +5,9 @@
 <body>
   <div class="navbar navbar">
     <div class="navbar-inner">
+      <div class = "login">
+        {{loginButtons align="right"}}
+      </div>
     </div>
   </div>
   <div class="container">
@@ -13,10 +16,23 @@
           <p class = "msg">Please select a chat room or make a new one</p>
         </div>
     <div class="row content">
-      {{> rooms}}
+      {{> input}}
+      {{> messages}}
     </div>
   </div>
 </body>
+<template name = "messages">
+  {{#each messages}}
+  <p>
+    <strong>{{name}} : </strong>    {{message}}<br/>
+  </p>
+  {{/each}}
+</template>
+
+<template name = "input">
+  <p>Message:<input type="text" id="message"></p>
+</template>
+
 <template name = "rooms">
   <form name = "new_row">
     <table id="rooms" class = "table table-striped table-hover span6">
